@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Player : MonoBehaviour
+public class PlayerParent : MonoBehaviour
 {
     //serialize fields
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
+    [SerializeField] GameObject bullet;
+    [SerializeField] float rifleFiringTimePeriod;
 
 
 
     //declarations & Cache
+    Coroutine shootRilfeCoroutine;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
 
@@ -27,10 +32,35 @@ public class Player : MonoBehaviour
 
         Movement();
         LookAtMouse();
-        //Shoot();
+        ShootRifle();
+        
     }
 
-    private void LookAtMouse()
+    private void ShootRifle()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            shootRilfeCoroutine = StartCoroutine(ShootRifleCoroutine());
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            StopCoroutine(shootRilfeCoroutine);
+        }
+    }
+
+    private IEnumerator ShootRifleCoroutine()
+    {
+        while (true)
+        {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                GameObject shotBullet = Instantiate(bullet, transform.position, transform.rotation);
+                yield return new WaitForSeconds(rifleFiringTimePeriod);
+            }
+        }
+    }
+    private void LookAtMouse()  
     {
         
         var mainMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
