@@ -10,6 +10,8 @@ public class PlayerParent : MonoBehaviour
     [SerializeField] float runSpeed;
     [SerializeField] GameObject bullet;
     [SerializeField] float rifleFiringTimePeriod;
+    [SerializeField] GameObject muzzle;
+    [SerializeField] AudioClip rifleSound;
 
 
 
@@ -55,7 +57,8 @@ public class PlayerParent : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                GameObject shotBullet = Instantiate(bullet, transform.position, transform.rotation);
+                GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, transform.rotation);
+                AudioSource.PlayClipAtPoint(rifleSound, Camera.main.transform.position);
                 yield return new WaitForSeconds(rifleFiringTimePeriod);
             }
         }
