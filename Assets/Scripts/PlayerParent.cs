@@ -57,8 +57,8 @@ public class PlayerParent : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, transform.rotation);
                 AudioSource.PlayClipAtPoint(rifleSound, Camera.main.transform.position);
+                GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, transform.rotation);
                 yield return new WaitForSeconds(rifleFiringTimePeriod);
             }
         }

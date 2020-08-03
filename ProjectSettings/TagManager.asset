@@ -44,6 +44,12 @@ TagManager:
   - name: Ground
     uniqueID: 2041741209
     locked: 0
+  - name: Bullet
+    uniqueID: 1500884137
+    locked: 0
   - name: Player
     uniqueID: 3418268677
+    locked: 0
+  - name: Walls
+    uniqueID: 4294494081
     locked: 0
