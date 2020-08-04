@@ -10,6 +10,7 @@ public class WeaponRifle : MonoBehaviour
 
     [Header("Tweakable Parameters")]
     [SerializeField] float rifleFiringTimePeriod;
+    [SerializeField] float bulletDestroyTime = 1f;
     [SerializeField] float maxClampedSpreadVal = 2f; //conversionFactor * maxClampedSpreadVal...
                                                      //... = total angular deflection on either side
     [SerializeField] float initialMaxSpreadVal = 0f; //0 means first shot is fully accurate;
@@ -29,7 +30,6 @@ public class WeaponRifle : MonoBehaviour
     private void Start()
     {
         myAudioSource = GetComponent<AudioSource>();
-        
     }
 
     private void Update()
@@ -54,11 +54,9 @@ public class WeaponRifle : MonoBehaviour
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 var effectiveQuaternionicRotation = RecoilGenerator(ref currentMaxSpreadVal);
-
-
                 myAudioSource.PlayOneShot(myAudioSource.clip);
-                //AudioSource.PlayClipAtPoint(rifleSound, Camera.main.transform.position);
                 GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, effectiveQuaternionicRotation);
+                Destroy(shotBullet, bulletDestroyTime);
                 yield return new WaitForSeconds(rifleFiringTimePeriod);
             }
         }

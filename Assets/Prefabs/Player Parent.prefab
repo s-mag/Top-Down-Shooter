@@ -119,11 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 6776980481036669572}
-  rifleSound: {fileID: 8300000, guid: 6068f988c42d3cd45a8a0aa5b150e318, type: 3}
   bullet: {fileID: 8137788801002338755, guid: 002598ce23225524fb3baeb5dad6928d, type: 3}
-  playerParent: {fileID: 139201830689113537}
   rifleFiringTimePeriod: 0.1
-  maxClampedSpreadVal: 2
+  bulletDestroyTime: 1
+  maxClampedSpreadVal: 3
   initialMaxSpreadVal: 0
   deltaMaxSpreadVal: 0.1
   conversionFactor: 5
@@ -138,8 +137,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6068f988c42d3cd45a8a0aa5b150e318, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.46
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -269,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.78
+  m_FalloffIntensity: 0.83
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
@@ -280,10 +279,10 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 40.9
-  m_PointLightOuterAngle: 81.88
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 21.94
+  m_PointLightInnerAngle: 20
+  m_PointLightOuterAngle: 72
+  m_PointLightInnerRadius: 3.4
+  m_PointLightOuterRadius: 16.44
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
