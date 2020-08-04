@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2833,17 +2833,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1484373244, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: maxClampedSpreadVal
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 139201830022914827, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 139201830022914827, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 139201830022914827, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 16.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 139201830022914827, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 139201830022914827, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 139201830022914827, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 139201830689113537, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
       propertyPath: m_Name
       value: ' Player Parent'
       objectReference: {fileID: 0}
     - target: {fileID: 139201830689113541, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4305992
+      value: -5.26
       objectReference: {fileID: 0}
     - target: {fileID: 139201830689113541, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9372542
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 139201830689113541, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2880,6 +2908,14 @@ PrefabInstance:
     - target: {fileID: 139201830689113541, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298064470458728075, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298064470458728075, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
+      propertyPath: m_Volume
+      value: 0.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
