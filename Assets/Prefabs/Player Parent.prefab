@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 139201829665283735}
   - component: {fileID: 1484373244}
   - component: {fileID: 6298064470458728075}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 139201830022914826}
   - component: {fileID: 139201830022914827}
   - component: {fileID: 1547716722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 139201830689113541}
   - component: {fileID: 139201830689113543}
   - component: {fileID: 139201830689113536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8126083038692042698}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
