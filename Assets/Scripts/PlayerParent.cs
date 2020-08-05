@@ -8,10 +8,6 @@ public class PlayerParent : MonoBehaviour
     //serialize fields
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
-    
-    
-
-
 
     //declarations & Cache
     Rigidbody2D myRigidbody;
