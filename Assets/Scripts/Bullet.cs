@@ -14,64 +14,38 @@ public class Bullet : MonoBehaviour
 
 
     //class-member declarations and cache
-    Rigidbody2D myRigidbody;
-    Collider2D myCollider;
     Vector2 prevPos;
-    LayerMask wallLayerMask;
+    Vector2 currentPos;
+    //LayerMask wallLayerMask;
 
-    private void Start()
+    private void Start()    
     {
-        wallLayerMask = LayerMask.GetMask("Walls");
-        myRigidbody = GetComponent<Rigidbody2D>();
-        myCollider = GetComponent<Collider2D>();
+        //wallLayerMask = LayerMask.GetMask("Walls");
     }
+    
     private void Update()
     {
-        prevPos = transform.position;
-        MoveBullet();
-        var currentPos = new Vector2(transform.position.x, transform.position.y);
-        RaycastHit2D[] hits = Physics2D.RaycastAll(prevPos, currentPos, (prevPos - currentPos).magnitude);
+        MoveBulletAndDoRaycastThings();
+    }
+   
+
+    private void MoveBulletAndDoRaycastThings()
+    {
+        prevPos = new Vector2(transform.position.x, transform.position.y);
+        transform.Translate(new Vector2(0, 1) * speed * Time.deltaTime);
+        currentPos = new Vector2(transform.position.x, transform.position.y);
+        var distance = (prevPos - currentPos).magnitude;
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(prevPos, transform.up, distance);
+
         for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit2D hit = hits[i];
-            Debug.Log(hit.collider.name);
 
-            if (hit.collider.gameObject.tag == "Wall")
-            {
-                
-                Debug.Log("TOUCHHHHHHHH");
-                //Destroy(gameObject);
-            }
-           
-             
+            if (hit.collider.gameObject.tag == "Wall") { Destroy(gameObject); }
 
-
-            //Debug.Log(hit.collider.gameObject.name);
         }
+
     }
 
-
-
-    private void MoveBullet()
-    {
-        myRigidbody.velocity = new Vector2(transform.up.normalized.x * speed, transform.up.normalized.y * speed);
-    }
-
-    
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy(gameObject);
-    }
-    
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Destroy(gameObject);
-    }
-    */
 }

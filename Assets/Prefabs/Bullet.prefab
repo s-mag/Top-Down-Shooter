@@ -123,7 +123,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734c06b1d4018f5408044ec663ee50c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 65
+  speed: 50
   playerParent: {fileID: 139201830689113537, guid: d2f9190ba85b6844d80240ac4d6c5ee6, type: 3}
 --- !u!50 &1539471265
 Rigidbody2D:
