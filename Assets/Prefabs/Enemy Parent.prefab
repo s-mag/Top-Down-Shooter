@@ -83,6 +83,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da6f75e3e4bb3241a29586e0be723b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
+  stoppingDistance: 8.5
+  retreatDistance: 6
+  player: {fileID: 0}
 --- !u!1 &1780436079003862806
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 5140649700235114118}
-  bullet: {fileID: 8137788801002338755, guid: 002598ce23225524fb3baeb5dad6928d, type: 3}
+  bullet: {fileID: 7418691131818898528, guid: 5c0609f38dcee284784e6bcefb2d1211, type: 3}
   rifleFiringTimePeriod: 0.1
   bulletDestroyTime: 1
   maxClampedSpreadVal: 3

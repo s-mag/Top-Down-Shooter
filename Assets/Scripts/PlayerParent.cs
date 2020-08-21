@@ -33,11 +33,12 @@ public class PlayerParent : MonoBehaviour
     {
         
         var mainMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.LookAt(mainMousePos);
+        
         
         var gameObjectPos = transform.position;
         var directionToLookIn = new Vector2(mainMousePos.x - gameObjectPos.x, mainMousePos.y - gameObjectPos.y).normalized;
         transform.up = directionToLookIn;
+        
         
     }
 
