@@ -12,11 +12,13 @@ public class PlayerParent : MonoBehaviour
     //declarations & Cache
     Rigidbody2D myRigidbody;
     Animator myAnimator;
-
-
+    WeaponRifle myWeaponRifle;
+    Coroutine shootRilfeCoroutine;
 
     void Start()
     {
+        myWeaponRifle = transform.GetChild(0).gameObject.GetComponent<WeaponRifle>(); //WeaponRifle.cs in the child
+        //REFACTOR the above code
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator =  GetComponentInChildren<Animator>();
     }
@@ -26,9 +28,18 @@ public class PlayerParent : MonoBehaviour
     {
         Movement();
         LookAtMouse();
+        ShootRifle();
+    }
+    private void ShootRifle()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) { shootRilfeCoroutine = StartCoroutine(myWeaponRifle.ShootRifleCoroutine()); }
+        if (Input.GetKeyUp(KeyCode.Mouse0)) { StopCoroutine(shootRilfeCoroutine); }
+        //Spread is reset everytime u start spraying again.
+
     }
 
-    
+
     private void LookAtMouse()  
     {
         

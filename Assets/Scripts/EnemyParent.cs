@@ -11,17 +11,27 @@ public class EnemyParent : MonoBehaviour
 
     [SerializeField] GameObject player;
 
+    //DEVCODE delete this, avoid doing 
+    [SerializeField] GameObject myMuzzle;
+
 
     //declarations & cache
+    Coroutine shootRilfeCoroutine;
+    bool shootRifleCorutineIsRunning = false;
     Vector2 vectorFromEnemyToPlayer;
+    WeaponRifle myWeaponRifle;
     float distanceBetweenPlayerAndEnemy;
 
     private void Start()
     {
+        //DEVCODE START
         if (stoppingDistance < retreatDistance)
         {
             Debug.LogError("retreatDistance cannot be greater than stopping distance!");
         }
+        //DEVCODE END
+
+        myWeaponRifle = transform.GetChild(0).gameObject.GetComponent<WeaponRifle>();
 
     }
 
@@ -43,12 +53,24 @@ public class EnemyParent : MonoBehaviour
 
     private void Shoot()
     {
-        //TODO Add shooting mechanics using line of sight and all
+        RaycastHit2D rayFromMuzzle = Physics2D.Raycast(myMuzzle.transform.position,
+            myMuzzle.transform.up, distance:2421);
+
+        //TODO instead of using myMuzzle, use myWeaponRifle.muzzle
+
+        //StartCoroutine(myWeaponRifle.ShootRifleCoroutine());
+
+
+        if (rayFromMuzzle.collider.gameObject.tag == "Player")
+        {
+            Debug.Log("IT HIT PLAYER");
+        }
+
+
     }
 
     private void LookTowardsPlayer()
     {
-        //TODO better code for this?
         transform.up = vectorFromEnemyToPlayer.normalized;
     }
 
