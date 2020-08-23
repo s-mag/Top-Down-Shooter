@@ -22,6 +22,7 @@ public class WeaponRifle : MonoBehaviour
     //Declarations and Cache
 
     AudioSource myAudioSource;
+    public bool isShootRifleCoroutineRunning = false;
     float currentMaxSpreadVal;
 
 
@@ -34,6 +35,7 @@ public class WeaponRifle : MonoBehaviour
 
     public IEnumerator ShootRifleCoroutine()
     {
+        isShootRifleCoroutineRunning = true;
         currentMaxSpreadVal = initialMaxSpreadVal;
 
         while (true)

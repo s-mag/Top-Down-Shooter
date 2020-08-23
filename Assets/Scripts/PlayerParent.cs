@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class PlayerParent : MonoBehaviour
 {
     //serialize fields
+    [SerializeField] int health = 100;
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
 

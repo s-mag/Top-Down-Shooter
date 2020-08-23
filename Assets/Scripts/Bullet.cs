@@ -3,8 +3,8 @@
 public class Bullet : MonoBehaviour
 {
     //serialize fields
+    [SerializeField] public int damage = 10; //TODO CONTINUE HERE
     [SerializeField] float speed;
-    [SerializeField] GameObject playerParent;
 
 
     //class-member declarations and cache

@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1484373244}
   - component: {fileID: 6298064470458728075}
   - component: {fileID: 820148636}
-  m_Layer: 11
+  - component: {fileID: 680337442}
+  m_Layer: 14
   m_Name: Player Rifle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +128,7 @@ MonoBehaviour:
   initialMaxSpreadVal: 0
   deltaMaxSpreadVal: 0.1
   conversionFactor: 5
+  isShootRifleCoroutineRunning: 0
 --- !u!82 &6298064470458728075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -249,6 +251,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.594771, y: 0.35118675}
   m_EdgeRadius: 0
+--- !u!50 &680337442
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139201829665283730}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &139201830022914836
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +283,7 @@ GameObject:
   - component: {fileID: 139201830022914826}
   - component: {fileID: 139201830022914827}
   - component: {fileID: 1547716722}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee590fac114bb2f4080352839405f01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   walkSpeed: 10
   runSpeed: 15
 --- !u!50 &139201830689113536
@@ -428,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8126083038692042698}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
