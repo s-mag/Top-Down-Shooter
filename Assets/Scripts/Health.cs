@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
-{
+{   
+    //Serialize fields
     [SerializeField] int health = 50;
 
     private void Update()

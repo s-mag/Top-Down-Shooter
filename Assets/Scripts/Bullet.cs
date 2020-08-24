@@ -3,17 +3,20 @@
 public class Bullet : MonoBehaviour
 {
     //serialize fields
-    [SerializeField] public int damage = 10; //TODO CONTINUE HERE
+    [SerializeField] public int damage = 10;
     [SerializeField] float speed;
 
 
-    //class-member declarations and cache
+    //cache and declarations
     Vector2 prevPos;
     Vector2 currentPos;
+
+
     //LayerMask wallLayerMask;
 
     private void Start()    
     {
+        //TODO wat is this?
         //wallLayerMask = LayerMask.GetMask("Walls");
     }
     

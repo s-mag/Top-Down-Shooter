@@ -19,8 +19,7 @@ public class WeaponRifle : MonoBehaviour
 
 
 
-    //Declarations and Cache
-
+    //cache and declarations
     AudioSource myAudioSource;
     public bool isShootRifleCoroutineRunning = false;
     float currentMaxSpreadVal;

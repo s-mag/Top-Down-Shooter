@@ -13,14 +13,13 @@ public class EnemyParent : MonoBehaviour
 
     [SerializeField] GameObject player;
 
-    //DEVCODE delete this, avoid doing 
+    //DEVCODE delete this, avoid doing //TODO what is this?
     [SerializeField] GameObject myMuzzle;
 
 
     //declarations & cache
     Coroutine shootRifleCoroutine;
     Health myHealth;
-
     bool shouldBeShooting = false;
     Vector2 vectorFromEnemyToPlayer;
     WeaponRifle myWeaponRifle;
@@ -29,6 +28,8 @@ public class EnemyParent : MonoBehaviour
 
     private void Start()
     {
+        //BUG Coroutine error comes in console work on it.
+
         myHealth = GetComponent<Health>();
         //DEVCODE START
         if (stoppingDistance < retreatDistance)

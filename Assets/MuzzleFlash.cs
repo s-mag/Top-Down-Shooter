@@ -6,11 +6,15 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class MuzzleFlash : MonoBehaviour
 {
+    //REFACTOR this entire class!!!!!!!!!!!!!!!!!!!!!!
+
+
+    //Serialize fields
     [SerializeField] GameObject rifle;
 
 
 
-
+    //cache & declarations
     float muzzleFlashTime;
     Light2D muzzleFlashLightComponent;
     Coroutine muzzleFlashCoroutine;
@@ -34,9 +38,7 @@ public class MuzzleFlash : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0) && !isCoroutineRunning)
         {
-            
             muzzleFlashCoroutine = StartCoroutine(MuzzleFlashCoroutine());
-
         }
         
     }

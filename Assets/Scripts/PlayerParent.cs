@@ -10,7 +10,7 @@ public class PlayerParent : MonoBehaviour
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
 
-    //declarations & Cache
+    //cache and declarations
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     WeaponRifle myWeaponRifle;
