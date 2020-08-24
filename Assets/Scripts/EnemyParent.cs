@@ -19,6 +19,7 @@ public class EnemyParent : MonoBehaviour
 
     //declarations & cache
     Coroutine shootRifleCoroutine;
+    Health myHealth;
 
     bool shouldBeShooting = false;
     Vector2 vectorFromEnemyToPlayer;
@@ -28,6 +29,7 @@ public class EnemyParent : MonoBehaviour
 
     private void Start()
     {
+        myHealth = GetComponent<Health>();
         //DEVCODE START
         if (stoppingDistance < retreatDistance)
         {
@@ -51,13 +53,7 @@ public class EnemyParent : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Bullet")
-        {
-            health -= other.gameObject.GetComponent<Bullet>().damage;
-        }
-    }
+    
     private void Shoot()
     {
         if (shouldBeShooting && !myWeaponRifle.isShootRifleCoroutineRunning)
@@ -93,7 +89,7 @@ public class EnemyParent : MonoBehaviour
         //DEVCODE 
         Debug.DrawLine(transform.position, transform.position + (transform.up * shootRaycastDistance), Color.red);
 
-        Debug.Log(rayFromMuzzle.collider.gameObject);
+        //Debug.Log(rayFromMuzzle.collider.gameObject);
 
         if (rayFromMuzzle.collider.gameObject.tag == "Player") 
         {

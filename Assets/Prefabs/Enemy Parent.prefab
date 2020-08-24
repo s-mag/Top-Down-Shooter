@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1780436078873158082}
   - component: {fileID: 1827311900399413458}
   - component: {fileID: 8313992764892525301}
+  - component: {fileID: 7113639470348366403}
   m_Layer: 12
   m_Name: Enemy Parent
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &1827311900399413458
 CircleCollider2D:
@@ -90,6 +91,19 @@ MonoBehaviour:
   retreatDistance: 6
   player: {fileID: 0}
   myMuzzle: {fileID: 5140649700235114118}
+--- !u!114 &7113639470348366403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780436078873158083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8997531333b484f9bf46d14e5d6816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!1 &1780436079003862806
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 5140649700235114118}
-  bullet: {fileID: 7418691131818898528, guid: 5c0609f38dcee284784e6bcefb2d1211, type: 3}
+  bullet: {fileID: 7418691131818898528, guid: f24cdae25d58e96469568517cab036b6, type: 3}
   rifleFiringTimePeriod: 0.1
   bulletDestroyTime: 1
   maxClampedSpreadVal: 3
@@ -316,7 +330,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6068f988c42d3cd45a8a0aa5b150e318, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.46
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1239914380}
   - component: {fileID: 1239914381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1239914380
 Transform:
   m_ObjectHideFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
-  m_Color: {r: 0.9433962, g: 0.7892471, b: 0.42185828, a: 1}
+  m_Color: {r: 1, g: 0.39183417, b: 0.3433962, a: 1}
   m_Intensity: 1.89
   m_LightVolumeOpacity: 0.107
   m_ApplyToSortingLayers: 00000000997fb279a9ac755905a4becb81c7f8ff
@@ -86,8 +86,8 @@ GameObject:
   - component: {fileID: 5010934016769135186}
   - component: {fileID: 1243375622590737517}
   - component: {fileID: 1260536195}
-  m_Layer: 0
-  m_Name: Bullet Orange
+  m_Layer: 9
+  m_Name: Bullet Orange Enemy
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,4 +222,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a3120a4085b6d439747dfac34a9618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 20

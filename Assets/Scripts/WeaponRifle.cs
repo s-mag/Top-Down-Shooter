@@ -38,6 +38,8 @@ public class WeaponRifle : MonoBehaviour
         isShootRifleCoroutineRunning = true;
         currentMaxSpreadVal = initialMaxSpreadVal;
 
+
+
         while (true)
         {
             var effectiveQuaternionicRotation = RecoilGenerator(ref currentMaxSpreadVal);
@@ -66,6 +68,11 @@ public class WeaponRifle : MonoBehaviour
 
         var effectiveQuaternionicRotation = Quaternion.Euler(effectiveRotation);
         return effectiveQuaternionicRotation;
+    }
+
+    public float GetRifleFiringTimePeriod()
+    {
+        return rifleFiringTimePeriod;
     }
 
 }
