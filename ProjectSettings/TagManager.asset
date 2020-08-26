@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Bullet
+  - Player Bullet
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Enemy
   - Enemy Rifle
   - Player Rifle
-  - 
+  - Player Muzzle
   - 
   - 
   - 

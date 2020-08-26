@@ -17,6 +17,9 @@ public class EnemyParent : MonoBehaviour
     [SerializeField] GameObject myMuzzle;
 
 
+    [SerializeField] LayerMask layermasksToIgnore;
+
+
     //declarations & cache
     Coroutine shootRifleCoroutine;
     Health myHealth;
@@ -24,7 +27,7 @@ public class EnemyParent : MonoBehaviour
     Vector2 vectorFromEnemyToPlayer;
     WeaponRifle myWeaponRifle;
     float distanceBetweenPlayerAndEnemy;
-    int enemyLayerMask;
+
 
     private void Start()
     {
@@ -39,7 +42,6 @@ public class EnemyParent : MonoBehaviour
         //DEVCODE END
 
         myWeaponRifle = transform.GetChild(0).gameObject.GetComponent<WeaponRifle>();
-        enemyLayerMask = LayerMask.GetMask("Enemy");
 
 
     }
@@ -61,11 +63,11 @@ public class EnemyParent : MonoBehaviour
         {
             shootRifleCoroutine = StartCoroutine(myWeaponRifle.ShootRifleCoroutine());
         }
-        /*
+        
         else if (shouldBeShooting && myWeaponRifle.isShootRifleCoroutineRunning)
         {
             //coroutine should still be running
-        }*/
+        }
 
         else if (!shouldBeShooting)
         {
@@ -84,11 +86,11 @@ public class EnemyParent : MonoBehaviour
      
     private void RaycastCheck()
     {
-        RaycastHit2D rayFromMuzzle = Physics2D.Raycast(transform.position, transform.up,
-                                                       shootRaycastDistance, ~enemyLayerMask); //~ is used to exclude enemy 
+        RaycastHit2D rayFromMuzzle = Physics2D.Raycast(myMuzzle.transform.position, transform.up,
+                                                       shootRaycastDistance, ~layermasksToIgnore); //~ is used to exclude enemy 
 
         //DEVCODE 
-        Debug.DrawLine(transform.position, transform.position + (transform.up * shootRaycastDistance), Color.red);
+        Debug.DrawLine(myMuzzle.transform.position,myMuzzle.transform.position + (transform.up * shootRaycastDistance), Color.red);
 
         //Debug.Log(rayFromMuzzle.collider.gameObject);
 

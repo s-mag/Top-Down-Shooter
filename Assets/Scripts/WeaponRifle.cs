@@ -1,5 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+
+
+/*
+ * Using Delegates and Events to raise en event each time a bullet is shot 
+ * for the muzzle flash to occur
+*/
+
+
 
 public class WeaponRifle : MonoBehaviour
 {
@@ -21,6 +31,7 @@ public class WeaponRifle : MonoBehaviour
 
     //cache and declarations
     AudioSource myAudioSource;
+    public bool aBulletWasJustShot = false;
     public bool isShootRifleCoroutineRunning = false;
     float currentMaxSpreadVal;
 
@@ -37,21 +48,26 @@ public class WeaponRifle : MonoBehaviour
         isShootRifleCoroutineRunning = true;
         currentMaxSpreadVal = initialMaxSpreadVal;
 
-
-
         while (true)
-        {
-            var effectiveQuaternionicRotation = RecoilGenerator(ref currentMaxSpreadVal);
-            myAudioSource.PlayOneShot(myAudioSource.clip);
-            GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, effectiveQuaternionicRotation);
-            Destroy(shotBullet, bulletDestroyTime);
+        { 
+            ShootOneBullet();
             yield return new WaitForSeconds(rifleFiringTimePeriod);
         }
     }
 
+
+    private void ShootOneBullet()
+    {
+        var effectiveQuaternionicRotation = RecoilGenerator(ref currentMaxSpreadVal);
+        myAudioSource.PlayOneShot(myAudioSource.clip);
+        GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, effectiveQuaternionicRotation);
+        Destroy(shotBullet, bulletDestroyTime);
+    }
+
+
     private Quaternion RecoilGenerator(ref float currentMaxSpreadVal)
     {
-        randomSpreadVal = Random.Range(-currentMaxSpreadVal, currentMaxSpreadVal);
+        randomSpreadVal = UnityEngine.Random.Range(-currentMaxSpreadVal, currentMaxSpreadVal);
 
         //DEVCODE START
         if (currentMaxSpreadVal >= maxClampedSpreadVal) { Debug.Log(currentMaxSpreadVal); }

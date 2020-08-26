@@ -24,6 +24,8 @@ public class Bullet : MonoBehaviour
     {
         MoveBulletAndDoRaycastThings();
     }
+
+
    
 
     private void MoveBulletAndDoRaycastThings()

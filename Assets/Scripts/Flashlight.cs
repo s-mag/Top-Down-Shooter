@@ -2,9 +2,7 @@
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class Flashlight : MonoBehaviour
-{
-
-
+{ 
     //cache and declarations
     Light2D flashlightLightComponent;
 

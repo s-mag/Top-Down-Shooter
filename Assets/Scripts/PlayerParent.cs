@@ -30,6 +30,7 @@ public class PlayerParent : MonoBehaviour
         Movement();
         LookAtMouse();
         ShootRifle();
+
     }
     private void ShootRifle()
     {
@@ -81,6 +82,7 @@ public class PlayerParent : MonoBehaviour
         }
         Vector2 velocity = new Vector2(moveSpeedX, moveSpeedY);
         myRigidbody.velocity = velocity;
+        
     }
 
     

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1780436078873158087}
   - component: {fileID: 1780436078873158082}
   - component: {fileID: 1827311900399413458}
+  - component: {fileID: 1414465873}
   - component: {fileID: 8313992764892525301}
   - component: {fileID: 7113639470348366403}
   m_Layer: 12
@@ -72,6 +73,32 @@ CircleCollider2D:
   m_Offset: {x: -0.044106066, y: 0.048988808}
   serializedVersion: 2
   m_Radius: 0.8380068
+--- !u!61 &1414465873
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780436078873158083}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.30052018, y: 1.1892257}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.39895964, y: 1.4236665}
+  m_EdgeRadius: 0
 --- !u!114 &8313992764892525301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +118,9 @@ MonoBehaviour:
   retreatDistance: 6
   player: {fileID: 0}
   myMuzzle: {fileID: 5140649700235114118}
+  layermasksToIgnore:
+    serializedVersion: 2
+    m_Bits: 61952
 --- !u!114 &7113639470348366403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +232,6 @@ GameObject:
   - component: {fileID: 1780436079862725269}
   - component: {fileID: 1827311899452152062}
   - component: {fileID: 5637611978013432457}
-  - component: {fileID: 2484709761092920769}
-  - component: {fileID: 430886466}
   m_Layer: 13
   m_Name: Enemy Rifle
   m_TagString: Untagged
@@ -224,6 +252,7 @@ Transform:
   m_Children:
   - {fileID: 1780436079003862792}
   - {fileID: 7610607305953493960}
+  - {fileID: 3828981041676757567}
   m_Father: {fileID: 1780436078873158087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -309,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b644e1aa175a94fb83c1e12ce5be98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muzzle: {fileID: 5140649700235114118}
+  muzzle: {fileID: 2641821770091294751}
   bullet: {fileID: 7418691131818898528, guid: f24cdae25d58e96469568517cab036b6, type: 3}
   rifleFiringTimePeriod: 0.1
   bulletDestroyTime: 1
@@ -317,6 +346,7 @@ MonoBehaviour:
   initialMaxSpreadVal: 0
   deltaMaxSpreadVal: 0.1
   conversionFactor: 5
+  aBulletWasJustShot: 0
   isShootRifleCoroutineRunning: 0
 --- !u!82 &5637611978013432457
 AudioSource:
@@ -414,53 +444,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!61 &2484709761092920769
-BoxCollider2D:
+--- !u!1 &2641821770091294751
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780436079862725264}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.6801143, y: -0.4615333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.13, y: 2.07}
-    newSize: {x: 3.13, y: 2.07}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.594771, y: 0.35118675}
-  m_EdgeRadius: 0
---- !u!50 &430886466
-Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3828981041676757567}
+  m_Layer: 13
+  m_Name: Muzzle (Instantiate)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3828981041676757567
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780436079862725264}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_GameObject: {fileID: 2641821770091294751}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.824, y: -0.486, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1780436079862725267}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &5140649700235114118
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7610607305953493960}
   m_Layer: 13
-  m_Name: Muzzle
+  m_Name: Muzzle (Raycast)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5140649700235114118}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.253, y: -0.486, z: 0}
+  m_LocalPosition: {x: 1.3, y: -0.481, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1780436079862725267}
