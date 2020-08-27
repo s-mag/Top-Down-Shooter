@@ -30,6 +30,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player")
         {
+            Debug.Log("!");
             var otherHealth =  other.GetComponent<Health>();
             otherHealth.ReduceHealthBy(damage.GetDamage());
             Destroy(gameObject);

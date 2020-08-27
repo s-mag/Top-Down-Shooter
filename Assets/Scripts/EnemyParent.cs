@@ -4,24 +4,17 @@ using UnityEngine;
 public class EnemyParent : MonoBehaviour
 {
     //Serialize Fields
-    [SerializeField] int shootRaycastDistance = 10; //Line of sight distance
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float stoppingDistance; //distance at which enemy stops as it gets to the player
     [SerializeField] float retreatDistance; //distance at which enemy starts retreating as player approaches enemy. ...
                                             //...THIS SHOULD ALWAYS BE LESSER THAN stoppingDistance!
-
     [SerializeField] GameObject player;
 
-    //DEVCODE delete this, avoid doing //TODO what is this?
-    [SerializeField] GameObject myMuzzle;
-
-
-    [SerializeField] LayerMask layermasksToIgnore;
 
 
     //declarations & cache
     Coroutine shootRifleCoroutine;
-    bool shouldBeShooting = false;
+    EnemyRaycast enemyRaycast;
     Vector2 vectorFromEnemyToPlayer;
     WeaponRifle myWeaponRifle;
     float distanceBetweenPlayerAndEnemy;
@@ -39,7 +32,7 @@ public class EnemyParent : MonoBehaviour
         //DEVCODE END
 
         myWeaponRifle = transform.GetChild(0).gameObject.GetComponent<WeaponRifle>();
-
+        enemyRaycast = GetComponent<EnemyRaycast>();
 
     }
 
@@ -48,7 +41,6 @@ public class EnemyParent : MonoBehaviour
         UpdateParams();
         Movement();
         LookTowardsPlayer();
-        RaycastCheck();
         Shoot();
     }
 
@@ -56,17 +48,15 @@ public class EnemyParent : MonoBehaviour
     
     private void Shoot()
     {
-        if (shouldBeShooting && !myWeaponRifle.isShootRifleCoroutineRunning)
+        
+
+        if (enemyRaycast.shouldBeShooting && !myWeaponRifle.isShootRifleCoroutineRunning)
         {
             shootRifleCoroutine = StartCoroutine(myWeaponRifle.ShootRifleCoroutine());
         }
-        
-        else if (shouldBeShooting && myWeaponRifle.isShootRifleCoroutineRunning)
-        {
-            //coroutine should still be running
-        }
 
-        else if (!shouldBeShooting)
+
+        else if (!enemyRaycast.shouldBeShooting)
         {
             StopCoroutine(shootRifleCoroutine);
             myWeaponRifle.isShootRifleCoroutineRunning = false;
@@ -80,29 +70,30 @@ public class EnemyParent : MonoBehaviour
 
         distanceBetweenPlayerAndEnemy = vectorFromEnemyToPlayer.magnitude;
     }
-     
-    private void RaycastCheck()
-    {
-        RaycastHit2D rayFromMuzzle = Physics2D.Raycast(myMuzzle.transform.position, transform.up,
-                                                       shootRaycastDistance, ~layermasksToIgnore); //~ is used to exclude enemy 
-
-        //DEVCODE 
-        Debug.DrawLine(myMuzzle.transform.position,myMuzzle.transform.position + (transform.up * shootRaycastDistance), Color.red);
-
-        //Debug.Log(rayFromMuzzle.collider.gameObject);
-
-        if (rayFromMuzzle.collider.gameObject.tag == "Player") 
-        {
-            shouldBeShooting = true;
-        }
-
-        else if (rayFromMuzzle.collider.gameObject.tag != "Player")
-        {
-            shouldBeShooting = false;
-        }
 
 
-    }
+    //private void RaycastCheck()
+    //{
+    //    RaycastHit2D rayFromMuzzle = Physics2D.Raycast(myMuzzle.transform.position, transform.up,
+    //                                                   shootRaycastDistance, ~layermasksToIgnore); //~ is used to exclude enemy 
+
+    //    //DEVCODE 
+    //    Debug.DrawLine(myMuzzle.transform.position, myMuzzle.transform.position + (transform.up * shootRaycastDistance), Color.red);
+
+    //    //Debug.Log(rayFromMuzzle.collider.gameObject);
+
+    //    if (rayFromMuzzle.collider.gameObject.tag == "Player")
+    //    {
+    //        shouldBeShooting = true;
+    //    }
+
+    //    else if (rayFromMuzzle.collider.gameObject.tag != "Player")
+    //    {
+    //        shouldBeShooting = false;
+    //    }
+
+
+    //}
 
     private void LookTowardsPlayer()
     {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1414465873}
   - component: {fileID: 8313992764892525301}
   - component: {fileID: 7113639470348366403}
+  - component: {fileID: 1194157377}
   m_Layer: 12
   m_Name: Enemy Parent
   m_TagString: Enemy
@@ -111,16 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da6f75e3e4bb3241a29586e0be723b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  shootRaycastDistance: 10
   moveSpeed: 10
   stoppingDistance: 8.5
   retreatDistance: 6
   player: {fileID: 0}
-  myMuzzle: {fileID: 5140649700235114118}
-  layermasksToIgnore:
-    serializedVersion: 2
-    m_Bits: 258048
 --- !u!114 &7113639470348366403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +129,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+--- !u!114 &1194157377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780436078873158083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d130eccb4e5a37448be25e74a1391dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRaycastDistance: 10
+  myMuzzle: {fileID: 5140649700235114118}
+  layermasksToIgnore:
+    serializedVersion: 2
+    m_Bits: 258048
+  shouldBeShooting: 0
 --- !u!1 &1780436079003862806
 GameObject:
   m_ObjectHideFlags: 0
