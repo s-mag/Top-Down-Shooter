@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7113639470348366403}
   m_Layer: 12
   m_Name: Enemy Parent
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   myMuzzle: {fileID: 5140649700235114118}
   layermasksToIgnore:
     serializedVersion: 2
-    m_Bits: 61952
+    m_Bits: 258048
 --- !u!114 &7113639470348366403
 MonoBehaviour:
   m_ObjectHideFlags: 0

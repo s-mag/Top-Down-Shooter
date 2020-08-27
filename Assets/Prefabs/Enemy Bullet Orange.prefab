@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1239914380}
   - component: {fileID: 1239914381}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Sprite Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1239914380
 Transform:
   m_ObjectHideFlags: 0
@@ -46,18 +46,18 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
-  m_Color: {r: 0.9433962, g: 0.7892471, b: 0.42185828, a: 1}
-  m_Intensity: 1.89
-  m_LightVolumeOpacity: 0.107
+  m_Color: {r: 1, g: 0.39183417, b: 0.3433962, a: 1}
+  m_Intensity: 3.47
+  m_LightVolumeOpacity: 0.14
   m_ApplyToSortingLayers: 00000000997fb279a9ac755905a4becb81c7f8ff
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
+  m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 43
-  m_PointLightOuterAngle: 360
+  m_PointLightInnerAngle: 29.13
+  m_PointLightOuterAngle: 243
   m_PointLightInnerRadius: 0
   m_PointLightOuterRadius: 17.02
   m_PointLightDistance: 3
@@ -86,9 +86,9 @@ GameObject:
   - component: {fileID: 5010934016769135186}
   - component: {fileID: 1243375622590737517}
   - component: {fileID: 1260536195}
-  m_Layer: 9
-  m_Name: Bullet Orange
-  m_TagString: Player Bullet
+  m_Layer: 17
+  m_Name: Enemy Bullet Orange
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734c06b1d4018f5408044ec663ee50c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   speed: 50
 --- !u!50 &5010934016769135186
 Rigidbody2D:
@@ -183,7 +182,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 7418691131818898528}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -202,9 +201,9 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7418691131818898528}
   m_Enabled: 1
-  m_Density: 0
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.007377243, y: 0.008528916}
@@ -222,4 +221,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a3120a4085b6d439747dfac34a9618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 20

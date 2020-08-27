@@ -47,7 +47,7 @@ public class EnemyParent : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
         UpdateParams();
         Movement();
         LookTowardsPlayer();

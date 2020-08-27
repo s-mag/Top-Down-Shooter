@@ -3,13 +3,13 @@
 public class Bullet : MonoBehaviour
 {
     //serialize fields
-    [SerializeField] public int damage = 10;
     [SerializeField] float speed;
 
 
     //cache and declarations
     Vector2 prevPos;
     Vector2 currentPos;
+    Damage damage;
 
 
     //LayerMask wallLayerMask;
@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
     {
         //TODO wat is this?
         //wallLayerMask = LayerMask.GetMask("Walls");
+        damage = GetComponent<Damage>();
     }
     
     private void Update()
@@ -25,9 +26,16 @@ public class Bullet : MonoBehaviour
         MoveBulletAndDoRaycastThings();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player")
+        {
+            var otherHealth =  other.GetComponent<Health>();
+            otherHealth.ReduceHealthBy(damage.GetDamage());
+            Destroy(gameObject);
+        }
 
-   
-
+    }
     private void MoveBulletAndDoRaycastThings()
     {
         prevPos = new Vector2(transform.position.x, transform.position.y);

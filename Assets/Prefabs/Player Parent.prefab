@@ -423,7 +423,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27147964, y: 0.7444003}
+  m_Offset: {x: 0.27147964, y: 0.740299}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -434,7 +434,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45704073, y: 2.168295}
+  m_Size: {x: 0.45704073, y: 2.1600924}
   m_EdgeRadius: 0
 --- !u!1 &6776980481036669572
 GameObject:
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 8126083038692042698}
   - component: {fileID: 899881668}
   - component: {fileID: 899881669}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: Muzzle
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6776980481036669572}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.253, y: -0.486, z: 0}
+  m_LocalPosition: {x: 1.477, y: -0.472, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 139201829665283729}
@@ -481,7 +481,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07341051, y: 0.5738934}
+  m_Offset: {x: 0.010934234, y: 0.42469433}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -492,7 +492,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.090167, y: 0.9772539}
+  m_Size: {x: 2.041495, y: 1.0034167}
   m_EdgeRadius: 0
 --- !u!114 &899881669
 MonoBehaviour:
