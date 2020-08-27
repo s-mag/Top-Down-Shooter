@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class EnemyParent : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     //Serialize Fields
     [SerializeField] float moveSpeed = 5f;
@@ -21,9 +21,7 @@ public class EnemyParent : MonoBehaviour
 
 
     private void Start()
-    {
-        //BUG Coroutine error comes in console work on it.
-
+    { 
         //DEVCODE START
         if (stoppingDistance < retreatDistance)
         {
@@ -44,20 +42,17 @@ public class EnemyParent : MonoBehaviour
         Shoot();
     }
 
-
-    
     private void Shoot()
     {
-        
 
         if (enemyRaycast.shouldBeShooting && !myWeaponRifle.isShootRifleCoroutineRunning)
         {
             shootRifleCoroutine = StartCoroutine(myWeaponRifle.ShootRifleCoroutine());
         }
-
-
+        
         else if (!enemyRaycast.shouldBeShooting)
-        {
+        {   
+            if (shootRifleCoroutine == null) { return; }
             StopCoroutine(shootRifleCoroutine);
             myWeaponRifle.isShootRifleCoroutineRunning = false;
         }
@@ -66,34 +61,10 @@ public class EnemyParent : MonoBehaviour
     private void UpdateParams()
     {
         vectorFromEnemyToPlayer = new Vector2(player.transform.position.x - transform.position.x,
-                                                     player.transform.position.y - transform.position.y);
+                                              player.transform.position.y - transform.position.y);
 
         distanceBetweenPlayerAndEnemy = vectorFromEnemyToPlayer.magnitude;
     }
-
-
-    //private void RaycastCheck()
-    //{
-    //    RaycastHit2D rayFromMuzzle = Physics2D.Raycast(myMuzzle.transform.position, transform.up,
-    //                                                   shootRaycastDistance, ~layermasksToIgnore); //~ is used to exclude enemy 
-
-    //    //DEVCODE 
-    //    Debug.DrawLine(myMuzzle.transform.position, myMuzzle.transform.position + (transform.up * shootRaycastDistance), Color.red);
-
-    //    //Debug.Log(rayFromMuzzle.collider.gameObject);
-
-    //    if (rayFromMuzzle.collider.gameObject.tag == "Player")
-    //    {
-    //        shouldBeShooting = true;
-    //    }
-
-    //    else if (rayFromMuzzle.collider.gameObject.tag != "Player")
-    //    {
-    //        shouldBeShooting = false;
-    //    }
-
-
-    //}
 
     private void LookTowardsPlayer()
     {

@@ -16,9 +16,11 @@ public class WeaponRifle : MonoBehaviour
     //Serialize Fields
     [Header("Assignments")]
     [SerializeField] public GameObject muzzle;
+    [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject bullet;
 
     [Header("Tweakable Parameters")]
+    [SerializeField] bool isMuzzleFlashOn = true;
     [SerializeField] float rifleFiringTimePeriod;
     [SerializeField] float bulletDestroyTime = 1f;
     [SerializeField] float maxClampedSpreadVal = 2f;  //conversionFactor * maxClampedSpreadVal...
@@ -61,6 +63,11 @@ public class WeaponRifle : MonoBehaviour
         var effectiveQuaternionicRotation = RecoilGenerator(ref currentMaxSpreadVal);
         myAudioSource.PlayOneShot(myAudioSource.clip);
         GameObject shotBullet = Instantiate(bullet, muzzle.transform.position, effectiveQuaternionicRotation);
+        if (isMuzzleFlashOn)
+        {
+            var insantiatedMuzzleFlash = Instantiate(muzzleFlash, muzzle.transform);
+            Destroy(insantiatedMuzzleFlash, 0.05f);
+        }
         Destroy(shotBullet, bulletDestroyTime);
     }
 

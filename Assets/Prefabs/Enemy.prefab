@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 8313992764892525301}
   - component: {fileID: 7113639470348366403}
   - component: {fileID: 1194157377}
+  - component: {fileID: 3670529779088325742}
   m_Layer: 12
-  m_Name: Enemy Parent
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,6 +148,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 258048
   shouldBeShooting: 0
+--- !u!114 &3670529779088325742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780436078873158083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5042e324d87bf2d4a92676d6e2d95aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathSO: {fileID: 11400000, guid: 11a0d3a295afb6c4a85ab37523b2a1f2, type: 2}
 --- !u!1 &1780436079003862806
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +172,7 @@ GameObject:
   - component: {fileID: 1780436079003862792}
   - component: {fileID: 1780436079003862793}
   - component: {fileID: 1827311899382475888}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +259,7 @@ GameObject:
   - component: {fileID: 1780436079862725269}
   - component: {fileID: 1827311899452152062}
   - component: {fileID: 5637611978013432457}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Enemy Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +366,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 2641821770091294751}
+  muzzleFlash: {fileID: 1222625669124220951, guid: c56fcaec04a9ce3429879a8ee9438d9b, type: 3}
   bullet: {fileID: 7418691131818898528, guid: f24cdae25d58e96469568517cab036b6, type: 3}
+  isMuzzleFlashOn: 1
   rifleFiringTimePeriod: 0.1
   bulletDestroyTime: 1
   maxClampedSpreadVal: 3
@@ -466,7 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3828981041676757567}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Muzzle (Instantiate)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7610607305953493960}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Muzzle (Raycast)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 6776980481036669572}
+  muzzleFlash: {fileID: 1222625669124220951, guid: c56fcaec04a9ce3429879a8ee9438d9b, type: 3}
   bullet: {fileID: 7418691131818898528, guid: 5c0609f38dcee284784e6bcefb2d1211, type: 3}
+  isMuzzleFlashOn: 1
   rifleFiringTimePeriod: 0.1
   bulletDestroyTime: 1
   maxClampedSpreadVal: 3
@@ -445,11 +447,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8126083038692042698}
-  - component: {fileID: 899881668}
-  - component: {fileID: 899881669}
   m_Layer: 15
   m_Name: Muzzle
-  m_TagString: Player
+  m_TagString: Player Muzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,48 +462,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6776980481036669572}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.477, y: -0.472, z: 0}
+  m_LocalPosition: {x: 1.415, y: -0.472, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 139201829665283729}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!61 &899881668
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6776980481036669572}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010934234, y: 0.42469433}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.041495, y: 1.0034167}
-  m_EdgeRadius: 0
---- !u!114 &899881669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6776980481036669572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0ba36a98d1f5d04da81aa4688b3a5ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzzleFlash: {fileID: 1222625669124220951, guid: c56fcaec04a9ce3429879a8ee9438d9b, type: 3}
