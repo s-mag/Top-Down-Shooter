@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemyParent : MonoBehaviour
 {
     //Serialize Fields
-    [SerializeField] int health = 50;
     [SerializeField] int shootRaycastDistance = 10; //Line of sight distance
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float stoppingDistance; //distance at which enemy stops as it gets to the player
@@ -22,7 +21,6 @@ public class EnemyParent : MonoBehaviour
 
     //declarations & cache
     Coroutine shootRifleCoroutine;
-    Health myHealth;
     bool shouldBeShooting = false;
     Vector2 vectorFromEnemyToPlayer;
     WeaponRifle myWeaponRifle;
@@ -33,7 +31,6 @@ public class EnemyParent : MonoBehaviour
     {
         //BUG Coroutine error comes in console work on it.
 
-        myHealth = GetComponent<Health>();
         //DEVCODE START
         if (stoppingDistance < retreatDistance)
         {
